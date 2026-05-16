@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Izqa Makeup — Abadikan Momen Indahmu</title>
+
+  <!-- Google Fonts: Serif Modern untuk Headline, Sans-serif untuk Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      color: #2C1810;
+      background-color: #FBF6F1;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Tekstur latar belakang lembut (subtle pattern) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(196, 133, 106, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(196, 133, 106, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 60% 80%, rgba(180, 140, 100, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       UTILITY
+       ============================================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B8705A;
+      background: rgba(184, 112, 90, 0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: #2C1810;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #6B5147;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .divider-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .divider-ornament span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #C4856A, transparent);
+    }
+
+    .divider-ornament i {
+      width: 6px;
+      height: 6px;
+      background: #C4856A;
+      border-radius: 50%;
+    }
+
+    /* ============================================
+       NAVBAR
+       ============================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(251, 246, 241, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(196, 133, 106, 0.12);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(44, 24, 16, 0.08);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2C1810;
+    }
+
+    .nav-logo .accent {
+      color: #B8705A;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6B5147;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: #B8705A;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #B8705A;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: #B8705A;
+      color: #FFFAF5 !important;
+      padding: 10px 22px;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    .nav-cta:hover {
+      background: #9E5F47;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(184, 112, 90, 0.3);
+      color: #FFFAF5 !important;
+    }
+
+    /* Hamburger (Mobile) */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #2C1810;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: rgba(251, 246, 241, 0.97);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      z-index: 999;
+      border-bottom: 1px solid rgba(196, 133, 106, 0.15);
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6B5147;
+      border-bottom: 1px solid rgba(196, 133, 106, 0.08);
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+      color: #B8705A;
+    }
+
+    .mobile-menu .nav-cta {
+      display: inline-block;
+      margin-top: 16px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero {
+      padding-top: 120px;
+      padding-bottom: 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(196, 133, 106, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 560px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #B8705A;
+      background: rgba(184, 112, 90, 0.08);
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(184, 112, 90, 0.15);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: #B8705A;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: #2C1810;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .hero-title .highlight {
+      color: #B8705A;
+      position: relative;
+    }
+
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: rgba(184, 112, 90, 0.15);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #6B5147;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #B8705A, #9E5F47);
+      color: #FFFAF5;
+      padding: 14px 30px;
+      border-radius: 28px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 20px rgba(184, 112, 90, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #9E5F47, #8A4F3A);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(184, 112, 90, 0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: transparent;
+      color: #6B5147;
+      padding: 14px 28px;
+      border-radius: 28px;
+      border: 1.5px solid rgba(184, 112, 90, 0.3);
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: #B8705A;
+      color: #B8705A;
+      background: rgba(184, 112, 90, 0.04);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(184, 112, 90, 0.12);
+    }
+
+    .hero-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2C1810;
+    }
+
+    .hero-stat-label {
+      font-size: 0.72rem;
+      color: #8B6F63;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       HERO ARCHED PHOTO FRAME
+       Sesuaikan ukuran & kelengkungan di sini:
+       - width/height: ukuran frame
+       - border-radius: kelengkungan atas (dome)
+       ============================================ */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .arched-frame {
+      /* === UKURAN FRAME === */
+      width: 360px;
+      height: 500px;
+      /* === KELENGKUNGAN DOME === */
+      /* Angka 50% 50% 16px 16px = atas membulat (dome), bawah sedikit membulat */
+      border-radius: 50% 50% 16px 16px;
+      overflow: hidden;
+      position: relative;
+      /* === DROP SHADOW ELEGAN === */
+      box-shadow:
+        0 20px 60px rgba(44, 24, 16, 0.12),
+        0 8px 24px rgba(184, 112, 90, 0.08);
+      border: 4px solid rgba(255, 255, 255, 0.6);
+      background: #EDE3D9;
+    }
+
+    .arched-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .arched-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Dekorasi di belakang frame */
+    .arched-frame::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50% 50% 20px 20px;
+      border: 1.5px solid rgba(196, 133, 106, 0.15);
+      z-index: -1;
+    }
+
+    .hero-decor-circle {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(196, 133, 106, 0.12);
+      pointer-events: none;
+    }
+
+    .hero-decor-circle.c1 {
+      top: -30px;
+      right: -20px;
+    }
+
+    .hero-decor-circle.c2 {
+      bottom: 40px;
+      left: -40px;
+      width: 80px;
+      height: 80px;
+    }
+
+    /* ============================================
+       OPENING SECTION
+       ============================================ */
+    .opening {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #FBF6F1 0%, #F5EDE5 100%);
+    }
+
+    .opening-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .opening-text {
+      font-size: 1.05rem;
+      color: #6B5147;
+      line-height: 2;
+    }
+
+    .opening-text .dropcap {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 1;
+      margin-right: 8px;
+      margin-top: 4px;
+      color: #B8705A;
+    }
+
+    /* ============================================
+       SERVICES SECTION
+       ============================================ */
+    .services {
+      padding: 80px 0;
+      background: #F5EDE5;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .services-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(196, 133, 106, 0.1);
+      border-radius: 20px;
+      padding: 36px 28px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, #B8705A, #D4A488);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
+      border-color: rgba(184, 112, 90, 0.2);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(184, 112, 90, 0.08);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(184, 112, 90, 0.15);
+    }
+
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #B8705A;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2C1810;
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: #8B6F63;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .service-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #B8705A;
+    }
+
+    .service-price small {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #A08B80;
+    }
+
+    /* ============================================
+       PORTFOLIO / GALLERY SECTION
+       ============================================ */
+    .portfolio {
+      padding: 80px 0;
+      background: #FBF6F1;
+    }
+
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .portfolio-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      background: #EDE3D9;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Efek hover halus: scaling + brightness */
+      transition: transform 0.6s ease, filter 0.6s ease, brightness 0.6s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.85);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44, 24, 16, 0.65) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h4 {
+      font-size: 1.05rem;
+      color: #FFFAF5;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-overlay p {
+      font-size: 0.75rem;
+      color: rgba(255, 250, 245, 0.7);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================
+       TESTIMONIALS SECTION
+       ============================================ */
+    .testimonials {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #F5EDE5 0%, #FBF6F1 100%);
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .testimonials-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(196, 133, 106, 0.1);
+      border-radius: 20px;
+      padding: 32px 24px;
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.07);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #C4856A;
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: #5A4339;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #EDE3D9, #D4C4B5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #8B6F63;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #2C1810;
+    }
+
+    .testimonial-event {
+      font-size: 0.72rem;
+      color: #A08B80;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================
+       LOCATION / ADDRESS SECTION
+       ============================================ */
+    .location {
+      padding: 80px 0;
+      background: #FBF6F1;
+    }
+
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .location-content {
+      max-width: 480px;
+    }
+
+    .location-address {
+      font-size: 0.95rem;
+      color: #5A4339;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(184, 112, 90, 0.3);
+    }
+
+    .location-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: #2C1810;
+      color: #FFFAF5;
+      padding: 14px 26px;
+      border-radius: 28px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .location-map-btn:hover {
+      background: #3D2B1F;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(44, 24, 16, 0.2);
+    }
+
+    .location-map-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: #FFFAF5;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .location-map-frame {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
+      background: #EDE3D9;
+      aspect-ratio: 4/3;
+    }
+
+    .location-map-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ============================================
+       PROMO / URGENCY SECTION
+       ============================================ */
+    .promo {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #2C1810 0%, #3D2B1F 50%, #2C1810 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(184, 112, 90, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .promo-inner {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .promo .section-label {
+      background: rgba(184, 112, 90, 0.2);
+      color: #D4A488;
+    }
+
+    .promo-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: #FFFAF5;
+      margin-bottom: 16px;
+    }
+
+    .promo-title .accent {
+      color: #D4A488;
+    }
+
+    .promo-desc {
+      font-size: 1rem;
+      color: rgba(255, 250, 245, 0.6);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .promo-features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .promo-feature {
+      text-align: center;
+    }
+
+    .promo-feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(184, 112, 90, 0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+    }
+
+    .promo-feature-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #D4A488;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .promo-feature-text {
+      font-size: 0.75rem;
+      color: rgba(255, 250, 245, 0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-promo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #B8705A, #D4A488);
+      color: #2C1810;
+      padding: 16px 36px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 20px rgba(184, 112, 90, 0.3);
+    }
+
+    .btn-promo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(184, 112, 90, 0.4);
+    }
+
+    /* ============================================
+       MAIN CTA SECTION
+       ============================================ */
+    .main-cta {
+      padding: 80px 0;
+      background: #F5EDE5;
+    }
+
+    .main-cta-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .main-cta-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: #2C1810;
+      margin-bottom: 16px;
+    }
+
+    .main-cta-desc {
+      font-size: 1rem;
+      color: #6B5147;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .main-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #FFFAF5;
+      padding: 18px 40px;
+      border-radius: 32px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .main-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+    }
+
+    .main-cta-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #FFFAF5;
+    }
+
+    /* ============================================
+       GUARANTEE SECTION
+       ============================================ */
+    .guarantee {
+      padding: 60px 0;
+      background: #FBF6F1;
+    }
+
+    .guarantee-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(196, 133, 106, 0.12);
+      border-radius: 20px;
+      padding: 40px 36px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .guarantee-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(184, 112, 90, 0.08);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .guarantee-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #B8705A;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .guarantee-title {
+      font-size: 1.15rem;
+      color: #2C1810;
+      margin-bottom: 8px;
+    }
+
+    .guarantee-text {
+      font-size: 0.9rem;
+      color: #6B5147;
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       NB / NOTICE SECTION
+       ============================================ */
+    .nb-section {
+      padding: 40px 0 60px;
+      background: #FBF6F1;
+    }
+
+    .nb-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(184, 112, 90, 0.05);
+      border: 1px dashed rgba(184, 112, 90, 0.25);
+      border-radius: 16px;
+      padding: 24px 28px;
+    }
+
+    .nb-label {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #B8705A;
+      margin-bottom: 8px;
+    }
+
+    .nb-text {
+      font-size: 0.85rem;
+      color: #6B5147;
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: #2C1810;
+      padding: 40px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: rgba(255, 250, 245, 0.7);
+    }
+
+    .footer-brand .accent {
+      color: #D4A488;
+    }
+
+    .footer-credit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-credit-text {
+      font-size: 0.78rem;
+      color: rgba(255, 250, 245, 0.4);
+    }
+
+    .footer-credit-text a {
+      color: #D4A488;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .footer-credit-text a:hover {
+      color: #E8C4A8;
+    }
+
+    /* Placeholder logo kampus */
+    .footer-kampus-logo {
+      height: 28px;
+      width: auto;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-kampus-logo:hover {
+      opacity: 0.8;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 250, 245, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(184, 112, 90, 0.2);
+    }
+
+    .footer-social-link svg {
+      width: 16px;
+      height: 16px;
+      fill: rgba(255, 250, 245, 0.5);
+      transition: fill 0.3s ease;
+    }
+
+    .footer-social-link:hover svg {
+      fill: #D4A488;
+    }
+
+    /* ============================================
+       RESPONSIVE DESIGN
+       ============================================ */
+    @media (max-width: 1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .arched-frame {
+        /* Sedikit lebih kecil di tablet */
+        width: 300px;
+        height: 420px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      /* Frame arched lebih kecil di mobile */
+      .arched-frame {
+        width: 260px;
+        height: 360px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .location-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .location-content {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .location-address {
+        border-left: none;
+        border-top: 2px solid rgba(184, 112, 90, 0.3);
+        padding-left: 0;
+        padding-top: 16px;
+      }
+
+      .promo-features {
+        gap: 24px;
+      }
+
+      .guarantee-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-stats {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">Izqa <span class="accent">Makeup</span></a>
+      <ul class="nav-links">
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+        <li><a href="#booking" class="nav-cta">Booking Sekarang</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menu navigasi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#layanan" onclick="closeMobileMenu()">Layanan</a>
+    <a href="#portofolio" onclick="closeMobileMenu()">Portofolio</a>
+    <a href="#testimoni" onclick="closeMobileMenu()">Testimoni</a>
+    <a href="#lokasi" onclick="closeMobileMenu()">Lokasi</a>
+    <a href="#booking" class="nav-cta" onclick="closeMobileMenu()">Booking Sekarang</a>
+  </div>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Professional Makeup Artist
+        </div>
+        <h1 class="hero-title">
+          Abadikan Momen Indahmu dengan <span class="highlight">Sentuhan Sempurna</span>
+        </h1>
+        <p class="hero-desc">
+          Setiap wajah punya cerita, dan kami hadir untuk memastikan ceritamu tampil dalam cahaya terindah. Dari altar pernikahan hingga panggung wisuda, Izqa Makeup siap menyempurnakan momen spesialmu.
+        </p>
+        <div class="hero-buttons">
+          <!-- GANTI NOMOR WHATSAPP DI BAWAH INI (setelah wa.me/ dan sebelum ?text) -->
+          <a href="https://wa.me/6281234567890?text=Halo%20Izqa%20Makeup%2C%20saya%20ingin%20konsultasi%20dan%20booking%20jadwal" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Konsultasi &amp; Booking Jadwal
+          </a>
+          <a href="#portofolio" class="btn-secondary">
+            Lihat Portofolio
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-number">500+</div>
+            <div class="hero-stat-label">Klien Puas</div>
+          </div>
+          <div>
+            <div class="hero-stat-number">5</div>
+            <div class="hero-stat-label">Tahun Pengalaman</div>
+          </div>
+          <div>
+            <div class="hero-stat-number">100%</div>
+            <div class="hero-stat-label">Produk Original</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-decor-circle c1"></div>
+        <div class="hero-decor-circle c2"></div>
+
+        <!-- ========================================
+             ARCHED / DOME PHOTO FRAME
+             Sesuaikan: width, height, border-radius
+             di CSS class .arched-frame
+             ======================================== -->
+        <div class="arched-frame">
+          <!-- GANTI src DENGAN FOTO HASIL MAKEUP TERBAIK ANDA -->
+          <img src="3.jpeg" alt="Hasil makeup terbaik Izqa Makeup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPENING SECTION ===================== -->
+  <section class="opening" id="opening">
+    <div class="container">
+      <div class="opening-inner">
+        <span class="section-label">Tentang Kami</span>
+        <h2 class="section-title">Kecantikan yang Mengalir Alami</h2>
+        <div class="divider-ornament">
+          <span></span><i></i><span></span>
+        </div>
+        <p class="opening-text">
+          <span class="dropcap">I</span>zqa Makeup lahir dari kecintaan mendalam terhadap dunia kecantikan dan seni merias wajah. Kami percaya bahwa setiap perempuan layak tampil memukau di momen-momen terpenting dalam hidupnya. Dengan sentuhan tangan yang terlatih dan hati yang penuh dedikasi, kami menghadirkan riasan yang menonjolkan keindahan aslimu, bukan menutupinya. Berbekal pengalaman menangani ratusan klien dan selalu mengikuti tren terkini, kami siap menjadi bagian dari cerita indahmu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES SECTION ===================== -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="services-header">
+        <span class="section-label">Layanan Kami</span>
+        <h2 class="section-title">Paket Makeup Pilihan</h2>
+        <p class="section-subtitle">Pilih paket yang sesuai dengan momen spesialmu. Setiap paket dirancang dengan detail dan kualitas terbaik.</p>
+      </div>
+      <div class="services-grid">
+
+        <!-- Paket 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="service-name">Wedding Makeup</h3>
+          <p class="service-desc">Riasan pengantin yang abadi sepanjang hari. Tahan berlama-lama, tetap flawless dari akad hingga resepsi. Termasuk touch-up dan konsultasi look.</p>
+          <div class="service-price">Mulai Rp 1.500.000 <small>/ sesi</small></div>
+        </div>
+
+        <!-- Paket 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="service-name">Graduation Makeup</h3>
+          <p class="service-desc">Tampil memukau di hari wisuda. Riasan segar dan photogenic yang akan membuatmu bersinar di setiap jepretan kamera.</p>
+          <div class="service-price">Mulai Rp 500.000 <small>/ sesi</small></div>
+        </div>
+
+        <!-- Paket 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="service-name">Engagement Makeup</h3>
+          <p class="service-desc">Riasan elegan untuk momen lamaran. Tampil anggun dan natural agar momen sakralmu semakin berkesan.</p>
+          <div class="service-price">Mulai Rp 800.000 <small>/ sesi</small></div>
+        </div>
+
+        <!-- Paket 4 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="service-name">Party &amp; Event Makeup</h3>
+          <p class="service-desc">Riasan glamor untuk pesta, gathering, atau acara spesial lainnya. Sesuaikan gayamu, dari natural hingga bold.</p>
+          <div class="service-price">Mulai Rp 400.000 <small>/ sesi</small></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PORTFOLIO SECTION ===================== -->
+  <section class="portfolio" id="portofolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <span class="section-label">Portofolio</span>
+        <h2 class="section-title">Karya Terbaik Kami</h2>
+        <p class="section-subtitle">Setiap riasan adalah karya seni. Lihat hasil makeup kami untuk berbagai momen spesial klien.</p>
+      </div>
+      <div class="portfolio-grid">
+
+        <!-- Portfolio 1 - Wedding -->
+        <div class="portfolio-item">
+          <!-- GANTI src DENGAN FOTO HASIL MAKEUP WEDDING ANDA -->
+          <img src="1.jpeg" alt="Hasil makeup Wedding Izqa Makeup">
+          <div class="portfolio-overlay">
+            <h4>Wedding Makeup</h4>
+            <p>Bridal Look</p>
+          </div>
+        </div>
+
+        <!-- Portfolio 2 - Graduation -->
+        <div class="portfolio-item">
+          <!-- GANTI src DENGAN FOTO HASIL MAKEUP WISUDA ANDA -->
+          <img src="2.jpeg" alt="Hasil makeup Wisuda Izqa Makeup">
+          <div class="portfolio-overlay">
+            <h4>Graduation Makeup</h4>
+            <p>Wisuda Look</p>
+          </div>
+        </div>
+
+        <!-- Portfolio 3 - Engagement -->
+        <div class="portfolio-item">
+          <!-- GANTI src DENGAN FOTO HASIL MAKEUP LAMARAN ANDA -->
+          <img src="4.jpeg" alt="Hasil makeup Engagement Izqa Makeup">
+          <div class="portfolio-overlay">
+            <h4>Engagement Makeup</h4>
+            <p>Lamaran Look</p>
+          </div>
+        </div>
+
+        <!-- Portfolio 4 - Party -->
+        <div class="portfolio-item">
+          <!-- GANTI src DENGAN FOTO HASIL MAKEUP PESTA ANDA -->
+          <img src="5.jpeg" alt="Hasil makeup Party Izqa Makeup">
+          <div class="portfolio-overlay">
+            <h4>Party Makeup</h4>
+            <p>Glam Look</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS SECTION ===================== -->
+  <section class="testimonials" id="testimoni">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-label">Testimoni</span>
+        <h2 class="section-title">Kata Mereka tentang Izqa Makeup</h2>
+        <p class="section-subtitle">Kepuasan klien adalah kebanggaan kami. Berikut pengalaman mereka yang telah mempercayakan momen indahnya bersama kami.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <!-- Testimoni 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"Hasilnya luar biasa! Makeup ku tahan dari pagi sampai malam tanpa luntur sedikit pun. Semua tamu memuji tampilanku di hari pernikahan. Terima kasih Izqa Makeup!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Siti Nurhaliza</div>
+              <div class="testimonial-event">Wedding Makeup</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"Mbak Izqa sangat sabar dan detail banget. Konsultasinya juga membantu aku menemukan look yang pas. Foto wisudaku jadi semua keren karena makeup yang photogenic!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">D</div>
+            <div>
+              <div class="testimonial-name">Dewi Anggraeni</div>
+              <div class="testimonial-event">Graduation Makeup</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"Pertama kali pakai jasa MUA dan nggak nyesel sama sekali. Riasannya natural tapi tetap glam, persis seperti yang aku mau. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div>
+              <div class="testimonial-name">Ratna Kusuma</div>
+              <div class="testimonial-event">Engagement Makeup</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCATION SECTION ===================== -->
+  <section class="location" id="lokasi">
+    <div class="container">
+      <div class="location-inner">
+        <div class="location-content">
+          <span class="section-label">Lokasi Kami</span>
+          <h2 class="section-title">Temukan Kami dengan Mudah</h2>
+          <div class="divider-ornament" style="justify-content:flex-start">
+            <span></span><i></i><span></span>
+          </div>
+          <p class="location-address">
+            Pasar Dayeuhluhur,<br>
+            Kecamatan Dayeuhluhur,<br>
+            Kabupaten Cilacap,<br>
+            Jawa Tengah
+          </p>
+          <a href="https://maps.google.com/?q=Pasar+Dayeuhluhur+Kabupaten+Cilacap" target="_blank" rel="noopener" class="location-map-btn">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Buka di Google Maps
+          </a>
+        </div>
+        <div class="location-map-frame">
+          <!-- Ganti koordinat sesuai lokasi tepat jika perlu -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31653.204!2d108.75!3d-7.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f57001b1a5a57%3A0x301e8f1fc28bf60!2sDayeuhluhur%2C%20Cilacap!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Izqa Makeup di Pasar Dayeuhluhur, Cilacap">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROMO / URGENCY SECTION ===================== -->
+  <section class="promo" id="promo">
+    <div class="container">
+      <div class="promo-inner">
+        <span class="section-label">Penawaran Terbatas</span>
+        <h2 class="promo-title">Booking Sekarang, Dapatkan <span class="accent">Diskon Khusus</span></h2>
+        <p class="promo-desc">
+          Untuk klien yang melakukan booking minimal 2 minggu sebelum acara, kami berikan potongan harga spesial sebagai apresiasi atas kepercayaan Anda. Jangan tunggu sampai jadwal penuh!
+        </p>
+        <div class="promo-features">
+          <div class="promo-feature">
+            <div class="promo-feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="promo-feature-text">Booking H-14</div>
+          </div>
+          <div class="promo-feature">
+            <div class="promo-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <div class="promo-feature-text">Harga Spesial</div>
+          </div>
+          <div class="promo-feature">
+            <div class="promo-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="promo-feature-text">Garansi Hasil</div>
+          </div>
+        </div>
+        <!-- GANTI NOMOR WHATSAPP DI BAWAH INI (setelah wa.me/ dan sebelum ?text) -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Izqa%20Makeup%2C%20saya%20ingin%20booking%20dengan%20promo%20diskon%20khusus" class="btn-promo" target="_blank" rel="noopener">
+          Klaim Promo Sekarang
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN CTA SECTION ===================== -->
+  <section class="main-cta" id="booking">
+    <div class="container">
+      <div class="main-cta-inner">
+        <span class="section-label">Siap Tampil Sempurna?</span>
+        <h2 class="main-cta-title">Konsultasi Gratis bersama Izqa Makeup</h2>
+        <p class="main-cta-desc">
+          Ceritakan kebutuhanmu dan kami akan membantu menemukan look yang paling tepat untuk momen spesialmu. Tanpa biaya konsultasi, tanpa kewajiban. Kami siap mendengarkan.
+        </p>
+        <!-- GANTI NOMOR WHATSAPP DI BAWAH INI (setelah wa.me/ dan sebelum ?text) -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Izqa%20Makeup%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20paket%20makeup" class="main-cta-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Konsultasi &amp; Booking Jadwal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GUARANTEE SECTION ===================== -->
+  <section class="guarantee" id="garansi">
+    <div class="container">
+      <div class="guarantee-card">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <h3 class="guarantee-title">Garansi Keamanan Produk</h3>
+          <p class="guarantee-text">
+            Kami hanya menggunakan produk kosmetik premium dan 100% original dari brand-brand terpercaya. Keamanan dan kenyamanan kulit Anda adalah prioritas utama kami. Setiap produk yang digunakan telah melalui seleksi ketat dan terjamin keasliannya, sehingga Anda bisa tampil percaya diri tanpa khawatir iritasi atau efek samping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NB SECTION ===================== -->
+  <section class="nb-section">
+    <div class="container">
+      <div class="nb-card">
+        <div class="nb-label">Catatan Penting:</div>
+        <p class="nb-text">
+          Harga paket dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya. Untuk mendapatkan harga terbaru dan ketersediaan jadwal, silakan hubungi kami langsung melalui WhatsApp. DP 50% diperlukan untuk mengamankan jadwal booking Anda. Pembatalan kurang dari H-3 tidak dapat dikembalikan. Jadwal yang telah dikonfirmasi tidak dapat dipindahkan ke tanggal lain kecuali ada kesepakatan bersama minimal H-7 sebelum acara.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Izqa <span class="accent">Makeup</span></div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/izqa.makeup?igsh=MXZnZTF0bzg0Y2s3NQ==" target="_blank" rel="noopener" class="footer-social-link" title="Instagram Izqa Makeup">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="footer-social-link" title="WhatsApp Izqa Makeup">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+        <div class="footer-credit">
+          <!-- GANTI src DENGAN LOGO KAMPUS ANDA -->
+          <img src="https://scontent-cgk2-2.xx.fbcdn.net/v/t39.30808-6/305774133_509769101151030_4091291951941379920_n.png?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KBfhcCf5CgEQ7kNvwGJ_I8Q&_nc_oc=Adrk_VN4KXlW8mzh6nBclNvaVjbZe1YkKkwbJ1J4FobuXIQ52wIJecalDBnbIAEu2SY&_nc_zt=23&_nc_ht=scontent-cgk2-2.xx&_nc_gid=CYFIRsrrlCVfKXCh2K7Mbw&_nc_ss=7a289&oh=00_Af5XddyAXjyOqvePh-ZzwrHhor7Vtq2TSHJgC2R-IiABbQ&oe=6A0E3363" alt="Logo Kampus" class="footer-kampus-logo">
+          <span class="footer-credit-text">Dibuat oleh <a href="#">Ela Amelia</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    hamburgerBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.add('active');
+        hamburgerBtn.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        hamburgerBtn.children[1].style.opacity = '0';
+        hamburgerBtn.children[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        mobileMenu.classList.remove('active');
+        hamburgerBtn.children[0].style.transform = '';
+        hamburgerBtn.children[1].style.opacity = '';
+        hamburgerBtn.children[2].style.transform = '';
+      }
+    });
+
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('active');
+      hamburgerBtn.children[0].style.transform = '';
+      hamburgerBtn.children[1].style.opacity = '';
+      hamburgerBtn.children[2].style.transform = '';
+    }
+
+    // Smooth reveal on scroll (Intersection Observer)
+    const revealElements = document.querySelectorAll(
+      '.service-card, .portfolio-item, .testimonial-card, .guarantee-card, .nb-card, .location-inner, .promo-inner, .main-cta-inner'
+    );
+
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Staggered delay for grid items
+          const delay = entry.target.closest('.services-grid, .portfolio-grid, .testimonials-grid')
+            ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100
+            : 0;
+
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, delay);
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
